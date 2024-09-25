@@ -1,0 +1,10 @@
+C:\Users\assas\Desktop\OOP class\assignment1rapid\bin\Debug\assignment1rapid.exe.config
+C:\Users\assas\Desktop\OOP class\assignment1rapid\bin\Debug\assignment1rapid.exe
+C:\Users\assas\Desktop\OOP class\assignment1rapid\bin\Debug\assignment1rapid.pdb
+C:\Users\assas\Desktop\OOP class\assignment1rapid\obj\Debug\assignment1rapid.csproj.AssemblyReference.cache
+C:\Users\assas\Desktop\OOP class\assignment1rapid\obj\Debug\assignment1rapid.Form1.resources
+C:\Users\assas\Desktop\OOP class\assignment1rapid\obj\Debug\assignment1rapid.Properties.Resources.resources
+C:\Users\assas\Desktop\OOP class\assignment1rapid\obj\Debug\assignment1rapid.csproj.GenerateResource.cache
+C:\Users\assas\Desktop\OOP class\assignment1rapid\obj\Debug\assignment1rapid.csproj.CoreCompileInputs.cache
+C:\Users\assas\Desktop\OOP class\assignment1rapid\obj\Debug\assignment1rapid.exe
+C:\Users\assas\Desktop\OOP class\assignment1rapid\obj\Debug\assignment1rapid.pdb
