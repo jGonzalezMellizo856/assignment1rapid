@@ -19,8 +19,8 @@ namespace assignment1rapid
             InitializeComponent();
 
 
-            Image xSymbol = Image.FromFile("C:\\Users\\assas\\Desktop\\icons\\circleForTIcTacToe.png");
-            Image oSymbol = Image.FromFile("C:\\Users\\assas\\Desktop\\icons\\xSymbol.pn.png");
+            Image xSymbol = Image.FromFile(@"C:\Users\assas\Desktop\OOP class\assignment1rapid\Properties\xSymbol.pn.png");
+            Image oSymbol = Image.FromFile(@"C:\Users\assas\Desktop\OOP class\assignment1rapid\Properties\circleForTIcTacToe.png");
 
             game = new TicTacToeGame(xSymbol, oSymbol);
         }
@@ -32,8 +32,20 @@ namespace assignment1rapid
 
         private void button_Click(object sender, EventArgs e)
         {
+            Button clickedButton = sender as Button;
 
-           
+                if (clickedButton != null)//when the buttons are presed the current player is updated and the symbol then changes
+                {
+                    Image currentPlayerSymbol = game.GetPlayerSymbol();
+
+                    clickedButton.BackgroundImage = currentPlayerSymbol;
+
+                    clickedButton.Enabled = false;
+
+                    game.SwitchPlayer();
+
+                }
+
         }
     }
 
@@ -44,6 +56,8 @@ namespace assignment1rapid
         public Image PlayerXSymbol { get; private set; }
         public Image PlayerOSymbol { get; private set; }
 
+        private int turnCount = 0;
+
         public TicTacToeGame(Image playerXSymbol, Image playerOSymbol) 
         {
             CurrentPlayer = "X"; //it will start X as default
@@ -53,15 +67,45 @@ namespace assignment1rapid
 
         public void SwitchPlayer()
         {
-            CurrentPlayer = (CurrentPlayer == "X") ? "X" : "O";
+
+            turnCount++;
+
+            if(turnCount >= 9)//once the turn becomes a draw the game should reset 
+            {
+                MessageBox.Show("game is a draw");
+                ResetGame();
+            }
+
+            if (CurrentPlayer == "X")
+            {
+                CurrentPlayer = "O";
+                //MessageBox.Show("Player was switched");
+            }
+            else
+            {
+                CurrentPlayer = "X";
+                
+            }
+            //MessageBox.Show(CurrentPlayer);
         }
 
         public Image GetPlayerSymbol()
         {
-            if (CurrentPlayer == "X") 
+            if(CurrentPlayer == "X")
+            {
                 return PlayerXSymbol;
-            else 
+            }
+            else
+            {
                 return PlayerOSymbol;
+            }
+                
+        }
+
+        public void ResetGame()//allows game to reset
+        {
+            CurrentPlayer = "X";
+            turnCount = 0;
         }
 
     }
